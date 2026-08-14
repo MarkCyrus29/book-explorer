@@ -4,7 +4,6 @@ import { BookList } from '../components/BookList';
 import { Loader } from '../components/Loader';
 import { EmptyState } from '../components/EmptyState';
 import { useBookSearch } from '../hooks/useBookSearch';
-import { BookOpen } from 'lucide-react';
 
 export const Home: React.FC = () => {
   const { query, setQuery, books, isLoading, error } = useBookSearch();

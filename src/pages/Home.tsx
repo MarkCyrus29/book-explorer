@@ -6,7 +6,8 @@ import { EmptyState } from '../components/EmptyState';
 import { useBookSearch } from '../hooks/useBookSearch';
 
 export const Home: React.FC = () => {
-  const { query, setQuery, books, isLoading, error } = useBookSearch();
+  const { query, setQuery, books, isLoading, error, page, setPage, totalResults, totalPages } =
+    useBookSearch();
 
   return (
     <div className="min-h-screen bg-[var(--paper)]">
@@ -16,16 +17,13 @@ export const Home: React.FC = () => {
         <div className="max-w-[1400px] mx-auto flex flex-col items-center text-center">
 
 
-          <div className="max-w-2xl mb-12">
-            <h1 
+          <div className="max-w-2xl mb-6">
+            <h1
               className="text-[42px] sm:text-[56px] text-[var(--ink)] leading-[1.1] mb-5"
               style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
             >
               Find your next great read.
             </h1>
-            <p className="text-[17px] text-[var(--ink-secondary)] leading-relaxed">
-              Search millions of books from Open Library — by title, author, or subject.
-            </p>
           </div>
 
 
@@ -44,7 +42,13 @@ export const Home: React.FC = () => {
         {isLoading ? (
           <Loader />
         ) : books.length > 0 ? (
-          <BookList books={books} />
+          <BookList
+            books={books}
+            totalResults={totalResults}
+            page={page}
+            totalPages={totalPages}
+            onPageChange={setPage}
+          />
         ) : (
           <EmptyState hasQuery={query.trim().length > 0} />
         )}
@@ -52,3 +56,4 @@ export const Home: React.FC = () => {
     </div>
   );
 };
+

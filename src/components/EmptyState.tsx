@@ -8,7 +8,7 @@ interface EmptyStateProps {
 export const EmptyState: React.FC<EmptyStateProps> = ({ hasQuery }) => {
   if (!hasQuery) {
     return (
-      <div className="flex flex-col py-24 px-4 select-none items-center text-center">
+      <div className="flex flex-col py-12 px-4 select-none items-center text-center">
         <div className="max-w-sm flex flex-col items-center">
           <div className="w-12 h-12 rounded-2xl bg-[var(--surface)] flex items-center justify-center mb-6">
             <BookOpen className="h-6 w-6 text-[var(--ink-tertiary)]" strokeWidth={1.5} aria-hidden="true" />

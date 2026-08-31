@@ -150,19 +150,19 @@ export const BookDetails: React.FC = () => {
                 <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-[var(--ink-tertiary)] mb-4">
                   About
                 </p>
-                <p className="text-[16px] text-[var(--ink)] leading-[1.8] whitespace-pre-line">
+                <p className="text-[16px] text-(--ink) leading-[1.8] whitespace-pre-line">
                   {description}
                 </p>
               </div>
             )}
 
             {(description || bookDetails.first_publish_date) && bookDetails.subjects && (
-              <div className="w-full border-t border-[var(--border-hairline)] mb-6" />
+              <div className="w-full border-t border-(--border-hairline) mb-6" />
             )}
 
             {bookDetails.subjects && (
               <div className="mb-10 w-full">
-                <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-[var(--ink-tertiary)] mb-4">
+                <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-(--ink-tertiary) mb-4">
                   Subjects
                 </p>
                 <div className="flex flex-wrap justify-start gap-2">
